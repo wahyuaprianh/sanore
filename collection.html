@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Collection — LUMIÈRE</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="collection.html" class="nav-link active">Collection</a>
+    </div>
+    <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="SANORE Logo" class="logo-img"></a>
+    <div class="nav-right">
+      <a href="about.html" class="nav-link">Our Story</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <p class="section-tag">Explore</p>
+      <h1 class="page-title">The Collection</h1>
+      <p class="page-subtitle">Each fragrance tells a story. Find yours.</p>
+    </div>
+    <div class="page-hero-deco"></div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="floral">Floral</button>
+    <button class="filter-btn" data-filter="woody">Woody</button>
+    <button class="filter-btn" data-filter="fresh">Fresh</button>
+    <button class="filter-btn" data-filter="oriental">Oriental</button>
+    <div class="filter-sort">
+      <span>Sort:</span>
+      <select>
+        <option>Featured</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Newest</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- PRODUCTS FULL GRID -->
+  <section class="full-collection">
+    <div class="collection-grid">
+
+      <div class="product-card" data-category="floral">
+        <div class="product-img-wrap">
+          <div class="product-bg" style="background: linear-gradient(135deg, #f5f0e8, #e8ddd0);"></div>
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683702?w=400&q=80" alt="Pure Essence" class="product-img"/>
+          <div class="product-overlay"><a href="#" class="quick-view-btn">Quick View</a></div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta"><span class="cat-tag">Floral</span></div>
+          <h3>Pure Essence</h3>
+          <p class="notes">Bergamot, Musk, Vanilla</p>
+          <div class="product-footer">
+            <span class="price">$85</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card card-featured" data-category="floral">
+        <span class="badge-new">Baru</span>
+        <div class="product-img-wrap">
+          <div class="product-bg" style="background: linear-gradient(135deg, #f0e6e0, #e8d5cc);"></div>
+          <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=400&q=80" alt="Velvet Bloom" class="product-img"/>
+          <div class="product-overlay"><a href="#" class="quick-view-btn">Quick View</a></div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta"><span class="cat-tag">Floral</span></div>
+          <h3>Velvet Bloom</h3>
+          <p class="notes">Jasmine, Peony, White Musk</p>
+          <div class="product-footer">
+            <span class="price">$90</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="woody">
+        <div class="product-img-wrap">
+          <div class="product-bg" style="background: linear-gradient(135deg, #e8edf2, #d8e4ec);"></div>
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400&q=80" alt="Silver Woods" class="product-img"/>
+          <div class="product-overlay"><a href="#" class="quick-view-btn">Quick View</a></div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta"><span class="cat-tag">Woody</span></div>
+          <h3>Silver Woods</h3>
+          <p class="notes">Silver Woods, Tonka, Pvilla Bean</p>
+          <div class="product-footer">
+            <span class="price">$95</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="oriental">
+        <div class="product-img-wrap">
+          <div class="product-bg" style="background: linear-gradient(135deg, #2a2a35, #1a1a25);"></div>
+          <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&q=80" alt="Midnight Noir" class="product-img"/>
+          <div class="product-overlay"><a href="#" class="quick-view-btn">Quick View</a></div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta"><span class="cat-tag">Oriental</span></div>
+          <h3>Midnight Noir</h3>
+          <p class="notes">Black Rose, Patchouli, Oud</p>
+          <div class="product-footer">
+            <span class="price">$110</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="fresh">
+        <div class="product-img-wrap">
+          <div class="product-bg" style="background: linear-gradient(135deg, #dceaf8, #bfd5ef);"></div>
+          <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400&q=80" alt="Azure Dreams" class="product-img"/>
+          <div class="product-overlay"><a href="#" class="quick-view-btn">Quick View</a></div>
+          <div class="badge-blue">Eksklusif</div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta"><span class="cat-tag fresh-tag">Fresh</span></div>
+          <h3>Azure Dreams</h3>
+          <p class="notes">Sea Salt, Aqua Minerale, Driftwood</p>
+          <div class="product-footer">
+            <span class="price">$105</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="fresh">
+        <div class="product-img-wrap">
+          <div class="product-bg" style="background: linear-gradient(135deg, #e8f4f8, #cce8f0);"></div>
+          <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=400&q=80" alt="Oceanic Mist" class="product-img"/>
+          <div class="product-overlay"><a href="#" class="quick-view-btn">Quick View</a></div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta"><span class="cat-tag fresh-tag">Fresh</span></div>
+          <h3>Oceanic Mist</h3>
+          <p class="notes">Marine Accord, Citrus, White Cedar</p>
+          <div class="product-footer">
+            <span class="price">$88</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="woody">
+        <div class="product-img-wrap">
+          <div class="product-bg" style="background: linear-gradient(135deg, #f0ece4, #e4ddd2);"></div>
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683702?w=400&q=80" alt="Amber Santal" class="product-img"/>
+          <div class="product-overlay"><a href="#" class="quick-view-btn">Quick View</a></div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta"><span class="cat-tag">Woody</span></div>
+          <h3>Amber Santal</h3>
+          <p class="notes">Amber, Sandalwood, Vetiver</p>
+          <div class="product-footer">
+            <span class="price">$98</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="oriental">
+        <div class="product-img-wrap">
+          <div class="product-bg" style="background: linear-gradient(135deg, #e8e0f0, #d8cce4);"></div>
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400&q=80" alt="Rose Imperiale" class="product-img"/>
+          <div class="product-overlay"><a href="#" class="quick-view-btn">Quick View</a></div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta"><span class="cat-tag">Oriental</span></div>
+          <h3>Rose Imperiale</h3>
+          <p class="notes">Bulgarian Rose, Iris, Ambergris</p>
+          <div class="product-footer">
+            <span class="price">$125</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BLUE PROMO BANNER -->
+  <section class="promo-banner">
+    <div class="promo-content">
+      <p class="section-tag light">Penawaran Spesial</p>
+      <h2>Discovery Set</h2>
+      <p>Try 5 of our bestsellers in a luxurious travel-size set</p>
+      <div class="promo-price-row">
+        <span class="promo-old-price">$75</span>
+        <span class="promo-new-price">$55</span>
+        <span class="promo-badge">Save 27%</span>
+      </div>
+      <a href="#" class="btn-white">Add Discovery Set</a>
+    </div>
+    <div class="promo-image">
+      <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500&q=80" alt="Discovery Set"/>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3 class="footer-logo"><img src="assets/images/logo.png" alt="SANORE Logo" class="logo-img"></h3>
+        <p>The art of fine fragrance,<br/>crafted for the discerning soul.</p>
+        <div class="social-links">
+          <a href="#">IG</a><a href="#">FB</a><a href="#">TW</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a>
+        <a href="collection.html">Collection</a>
+        <a href="about.html">Our Story</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Information</h5>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer-col newsletter-col">
+        <h5>Newsletter</h5>
+        <p>Be the first to discover new arrivals and exclusive offers.</p>
+        <div class="newsletter-row">
+          <input type="email" placeholder="Email address"/>
+          <button>→</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 LUMIÈRE Maison de Parfum. All rights reserved.</p>
+      <p>Crafted with passion.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card[data-category]');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+            card.style.display = '';
+          } else {
+            card.style.opacity = '0.3';
+            card.style.transform = 'scale(0.97)';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
