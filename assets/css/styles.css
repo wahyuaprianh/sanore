@@ -931,6 +931,70 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
 /* Ornate frame responsive moved to bottom */
 
 /* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+.testimonial-section {
+  padding: 8rem 2rem;
+  background-color: var(--color-primary-dark);
+  text-align: center;
+}
+
+.testimonial-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+.testimonial-card {
+  background: rgba(20, 4, 6, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(220, 179, 96, 0.15);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(220, 179, 96, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-family: var(--font-italic);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+/* ==========================================================================
    CONSOLIDATED MOBILE OVERRIDES (DEFINITIVE)
    ========================================================================== */
 
