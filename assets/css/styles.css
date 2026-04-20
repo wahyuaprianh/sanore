@@ -23,6 +23,11 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Account for fixed sticky header navbar */
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-primary-dark);
@@ -331,6 +336,8 @@ body::after {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 .product-image-wrapper {
@@ -864,6 +871,8 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
   align-items: center;
   gap: 1.5rem;
   transition: var(--transition-smooth);
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Scent grid responsive moved to bottom */
