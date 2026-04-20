@@ -298,14 +298,14 @@ body::after {
 }
 
 .section-description {
-  font-family: var(--font-italic);
+  font-family: var(--font-body);
   font-size: 1.1rem;
   line-height: 1.8;
   max-width: 900px;
   margin: 0 auto 4rem;
   color: rgba(255, 255, 255, 0.9);
-  font-style: italic;
-  font-weight: 400;
+  font-style: normal;
+  font-weight: 300;
 }
 
 .section-description em {
