@@ -1099,11 +1099,16 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
   .scent-img-wrapper { aspect-ratio: 1/1 !important; width: 100% !important; }
   .scent-label { font-size: 0.55rem !important; text-align: center; }
 
+  .about-hero { height: 35vh !important; }
+  .about-hero-title { font-size: 2.2rem !important; letter-spacing: 0.1em !important; }
+  .about-subtitle-bar { padding: 3rem 1rem !important; }
+
   .about-subtitle { 
-    width: 90% !important; 
-    padding: 1.5rem !important; 
-    font-size: 0.95rem !important;
-    border-radius: 15px !important;
+    width: 92% !important; 
+    padding: 2.5rem 1.5rem !important; 
+    font-size: 1.1rem !important;
+    border-radius: 30px !important;
+    line-height: 1.6;
   }
 }
 
