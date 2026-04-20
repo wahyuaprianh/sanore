@@ -703,7 +703,7 @@ body::after {
 
 /* ---- ABOUT US SPECIFIC STYLES ---- */
 .about-hero {
-  height: 45vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -726,7 +726,7 @@ body::after {
 
 .about-subtitle-bar {
   background: transparent;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -1099,9 +1099,9 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
   .scent-img-wrapper { aspect-ratio: 1/1 !important; width: 100% !important; }
   .scent-label { font-size: 0.55rem !important; text-align: center; }
 
-  .about-hero { height: 35vh !important; }
+  .about-hero { height: 25vh !important; }
   .about-hero-title { font-size: 2.2rem !important; letter-spacing: 0.1em !important; }
-  .about-subtitle-bar { padding: 1.5rem 1rem !important; }
+  .about-subtitle-bar { padding: 0.8rem 1rem !important; }
 
   .about-subtitle { 
     width: 92% !important; 
