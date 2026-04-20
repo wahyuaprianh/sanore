@@ -91,7 +91,7 @@
               <span class="product-card-price" id="price-carvanilla">Rp 50.000</span>
             </div>
             <p class="product-description">
-              Carvanilla adalah parfum yang membungkusmu dalam lembutnya manis yang elegan. Cocok untuk anda yang ingin
+              Carvanilla adalah parfum yang membungkusmu dalam lembutnya manis yang elegan. Cocok untuk Anda yang ingin
               terkesan hangat, manis dan "hug-able". Seperti pelukan lembut di malam hari yang intimate, cozy, dan bikin
               nagih.
             </p>
@@ -222,7 +222,7 @@
 
     // Size Toggle Logic
     const sizeToggleContainers = document.querySelectorAll('.size-toggle-container');
-    
+
     sizeToggleContainers.forEach(container => {
       const options = container.querySelectorAll('.size-option');
       const slider = container.querySelector('.size-slider');
@@ -235,10 +235,10 @@
           options.forEach(opt => opt.classList.remove('active'));
           // Add active class to clicked
           option.classList.add('active');
-          
+
           // Move slider
           slider.style.transform = `translateX(${index * 100}%)`;
-          
+
           // Update price
           if (priceElement) {
             priceElement.style.opacity = 0; // fade out effect

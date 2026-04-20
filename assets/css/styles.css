@@ -1005,7 +1005,7 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
     gap: 12px !important;
     padding: 0 10px !important;
   }
