@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products | SANORE | Order Now</title>
   <link rel="icon" type="image/png" href="assets/images/lambang.png?v=1">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+  <script>document.body.classList.add('js-enabled');</script>
   <div class="bg-texture"></div>
 
   <nav class="navbar">
@@ -21,16 +26,12 @@
       <li><a href="about.html">About Us</a></li>
       <li><a href="product.html">Product</a></li>
       <li><a href="#">Testimonial</a></li>
-      <li><a href="#">Contact</a></li>
-      <li>
-        <button class="icon-btn" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </button>
-      </li>
     </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <main>
@@ -49,28 +50,32 @@
           <div class="product-info-box">
             <div class="product-card-header">
               <h3 class="product-card-title">MIDNIGHT JASMINE</h3>
-              <span class="product-card-price">Rp</span>
+              <span class="product-card-price" id="price-jasmine">Rp 50.000</span>
             </div>
             <p class="product-description">
-              Midnight Jasmine adalah parfum untuk aura misterius dan classy. Cocok dipakai pada malam hari atau acara formal, memberikan kesan percaya diri, elegan, dan sedikit "Dark Feminine Energy".
-            </p>
+              Midnight Jasmine memiliki aroma yang terasa seperti hangatnya matahari di taman bunga tropis floral manis
+              yang cerah, lembut tapi tetap hidup. Fresh, feminin, dan effortlessly pretty, cocok dipakai sehari-hari.
             <div class="fragrance-notes">
               <div class="note-item">
                 <span class="note-label">Top Notes</span>
-                <span class="note-content">Green Sap, Gardenia</span>
+                <span class="note-content">Marigold, Floral</span>
               </div>
               <div class="note-item">
                 <span class="note-label">Middle Notes</span>
-                <span class="note-content">Jasmine, Almond</span>
+                <span class="note-content">Jasmine Sambac</span>
               </div>
               <div class="note-item">
                 <span class="note-label">Base Notes</span>
-                <span class="note-content">Precious Woods, Tonka Bean, Licorice</span>
+                <span class="note-content">Honey, Amber, Balsamic</span>
               </div>
             </div>
             <div class="product-size">
               <span class="size-label">Size</span>
-              <span class="size-values">10ml | 30ml</span>
+              <div class="size-toggle-container" data-target="price-jasmine">
+                <div class="size-option active" data-price="Rp 50.000">30ml</div>
+                <div class="size-option" data-price="Rp 85.000">50ml</div>
+                <div class="size-slider"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -83,10 +88,12 @@
           <div class="product-info-box">
             <div class="product-card-header">
               <h3 class="product-card-title">CARVANILLA</h3>
-              <span class="product-card-price">Rp</span>
+              <span class="product-card-price" id="price-carvanilla">Rp 50.000</span>
             </div>
             <p class="product-description">
-              Carvanilla adalah parfum yang membungkusmu dalam lembutnya manis yang elegan. Cocok untuk kamu yang ingin terkesan hangat, manis dan "hug-able". Seperti pelukan lembut di malam hari yang intimate, cozy, dan bikin nagih.
+              Carvanilla adalah parfum yang membungkusmu dalam lembutnya manis yang elegan. Cocok untuk anda yang ingin
+              terkesan hangat, manis dan "hug-able". Seperti pelukan lembut di malam hari yang intimate, cozy, dan bikin
+              nagih.
             </p>
             <div class="fragrance-notes">
               <div class="note-item">
@@ -104,7 +111,11 @@
             </div>
             <div class="product-size">
               <span class="size-label">Size</span>
-              <span class="size-values">10ml | 30ml</span>
+              <div class="size-toggle-container" data-target="price-carvanilla">
+                <div class="size-option active" data-price="Rp 50.000">30ml</div>
+                <div class="size-option" data-price="Rp 85.000">50ml</div>
+                <div class="size-slider"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -117,49 +128,129 @@
           <div class="product-info-box">
             <div class="product-card-header">
               <h3 class="product-card-title">BLUSHING ROSE</h3>
-              <span class="product-card-price">Rp</span>
+              <span class="product-card-price" id="price-rose">Rp 50.000</span>
             </div>
             <p class="product-description">
-              Blushing Rose menghadirkan keindahan mawar yang mekar di pagi hari dalam balutan aroma yang lembut dan memikat. Ringan dan segar dengan sentuhan feminin yang anggun, parfum ini sempurna untuk menemani aktivitas sehari-hari.
+              Blushing Rose memiliki aroma feminin yang mewah dan menggoda perpaduan buah segar dengan mawar yang
+              elegan, dibalut sentuhan hangat yang creamy dan sensual. Cocok untuk Anda yang ingin tampil anggun,
+              classy, dan tetap memiliki aura “expensive dan memorable”.
             </p>
             <div class="fragrance-notes">
               <div class="note-item">
                 <span class="note-label">Top Notes</span>
-                <span class="note-content">Bergamot, Orange</span>
+                <span class="note-content">Pear, Lychee, Grapefruit</span>
               </div>
               <div class="note-item">
                 <span class="note-label">Middle Notes</span>
-                <span class="note-content">Bulgarian Rose, Grasse Rose, Violet, Magnolia</span>
+                <span class="note-content">Turkish Rose, Incense, Vetiver</span>
               </div>
               <div class="note-item">
                 <span class="note-label">Base Notes</span>
-                <span class="note-content">Cedar, Musk</span>
+                <span class="note-content">Vanilla, Musk, Evernyl</span>
               </div>
             </div>
             <div class="product-size">
               <span class="size-label">Size</span>
-              <span class="size-values">10ml | 30ml</span>
+              <div class="size-toggle-container" data-target="price-rose">
+                <div class="size-option active" data-price="Rp 50.000">30ml</div>
+                <div class="size-option" data-price="Rp 85.000">50ml</div>
+                <div class="size-slider"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+  </main>
 
   <footer class="footer">
     <div class="social-links">
-      <a href="#" class="social-icon" aria-label="Instagram">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      <a href="https://www.instagram.com/sanore_parfume?igsh=MWIxMXpseWVjMG84cA==" class="social-icon"
+        aria-label="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
       </a>
-      <a href="#" class="social-icon" aria-label="TikTok">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+      <a href="https://www.tiktok.com/@sanoreparfume?_r=1&_t=ZS-95giGS6p5yn" class="social-icon" aria-label="TikTok">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+        </svg>
       </a>
-      <a href="#" class="social-icon" aria-label="Link">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+      <a href="#" class="social-icon" aria-label="Shopee">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2 -1.857l.867 -12.143h-16.01z" />
+          <path d="M8.5 7c0 -1.653 1.5 -4 3.5 -4s3.5 2.347 3.5 4" />
+          <path
+            d="M9.5 17c.413 .462 1 1 2.5 1s2.5 -.897 2.5 -2s-1 -1.5 -2.5 -2s-2 -1.47 -2 -2c0 -1.104 1 -2 2 -2s1.5 0 2.5 1" />
+        </svg>
       </a>
-      <a href="#" class="social-icon" aria-label="Email">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <a href="https://wa.me/6281382885293?text=Halo,%20saya%20tertarik%20untuk%20membeli%20produknya"
+        class="social-icon" aria-label="WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg>
       </a>
     </div>
   </footer>
+
+  <script>
+    // Header Logic
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+          navLinks.classList.remove('active');
+          navToggle.classList.remove('active');
+        }
+      });
+    }
+
+    // Size Toggle Logic
+    const sizeToggleContainers = document.querySelectorAll('.size-toggle-container');
+    
+    sizeToggleContainers.forEach(container => {
+      const options = container.querySelectorAll('.size-option');
+      const slider = container.querySelector('.size-slider');
+      const targetId = container.getAttribute('data-target');
+      const priceElement = document.getElementById(targetId);
+
+      options.forEach((option, index) => {
+        option.addEventListener('click', () => {
+          // Remove active class from all
+          options.forEach(opt => opt.classList.remove('active'));
+          // Add active class to clicked
+          option.classList.add('active');
+          
+          // Move slider
+          slider.style.transform = `translateX(${index * 100}%)`;
+          
+          // Update price
+          if (priceElement) {
+            priceElement.style.opacity = 0; // fade out effect
+            setTimeout(() => {
+              priceElement.textContent = option.getAttribute('data-price');
+              priceElement.style.opacity = 1; // fade in
+            }, 200);
+          }
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
