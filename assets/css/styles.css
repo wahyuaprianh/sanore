@@ -25,7 +25,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Account for fixed sticky header navbar */
+  scroll-padding-top: 80px; 
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 65px !important;
+  }
 }
 
 body {
