@@ -18,7 +18,7 @@
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
 .cart-overlay.active {
@@ -29,14 +29,15 @@
 .cart-sidebar {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: 0;
+  transform: translateX(101%);
   width: 100%;
   max-width: 420px;
   height: 100%;
   background: var(--cart-bg);
   z-index: 1001;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-  transition: right 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
 }
@@ -48,7 +49,7 @@
 }
 
 .cart-sidebar.active {
-  right: 0;
+  transform: translateX(0);
 }
 
 .cart-header {
