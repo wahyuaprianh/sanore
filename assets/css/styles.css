@@ -131,6 +131,12 @@ body::after {
   display: flex;
   align-items: center;
   gap: 1rem;
+  text-decoration: none;
+  color: var(--color-gold);
+}
+
+.nav-brand:hover .nav-brand-text {
+  color: var(--color-gold-light);
 }
 
 .nav-logo {
