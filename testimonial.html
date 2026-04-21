@@ -7,6 +7,7 @@
     <title>Testimonial | SANORE</title>
     <link rel="icon" type="image/png" href="assets/images/lambang.png?v=1">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
         rel="stylesheet">
@@ -27,6 +28,14 @@
             <li><a href="product.html">Product</a></li>
             <li><a href="testimonial.html" class="active">Testimonial</a></li>
         </ul>
+        <button class="nav-cart-btn" aria-label="View Cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge">0</span>
+        </button>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -46,13 +55,25 @@
             <h3 class="about-subtitle">"Real stories from those who have unlocked the scent of desire."</h3>
         </section>
 
+        <!-- TESTIMONIAL SELECTOR -->
+        <section class="testimonial-selector reveal-on-scroll">
+            <p class="filter-title">Filter by Perfume</p>
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All Reviews</button>
+                <button class="filter-btn" data-filter="midnight-jasmine">Midnight Jasmine</button>
+                <button class="filter-btn" data-filter="carvanilla">Carvanilla</button>
+                <button class="filter-btn" data-filter="blushing-rose">Blushing Rose</button>
+            </div>
+        </section>
+
         <!-- TESTIMONIAL GRID -->
         <section class="testimonial-section reveal-on-scroll">
             <h2 class="section-title">CUSTOMER REVIEWS</h2>
 
             <div class="testimonial-grid">
                 <!-- Review 1 -->
-                <div class="testimonial-card reveal-on-scroll">
+                <div class="testimonial-card reveal-on-scroll" data-product="blushing-rose">
+                    <span class="product-badge">Blushing Rose</span>
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">
                         "Wanginya benar-benar elegan dan tahan lama! Blushing Rose adalah favorit saya untuk acara malam
@@ -62,7 +83,8 @@
                 </div>
 
                 <!-- Review 2 -->
-                <div class="testimonial-card reveal-on-scroll">
+                <div class="testimonial-card reveal-on-scroll" data-product="carvanilla">
+                    <span class="product-badge">Carvanilla</span>
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">
                         "Carvanilla sangat calming dan nggak bikin pusing sama sekali. Perfect for daily wear. Setiap
@@ -72,7 +94,8 @@
                 </div>
 
                 <!-- Review 3 -->
-                <div class="testimonial-card reveal-on-scroll">
+                <div class="testimonial-card reveal-on-scroll" data-product="midnight-jasmine">
+                    <span class="product-badge">Midnight Jasmine</span>
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">
                         "The packaging is as luxurious as the scent itself. Midnight Jasmine gives exactly that
@@ -82,7 +105,8 @@
                 </div>
 
                 <!-- Review 4 -->
-                <div class="testimonial-card reveal-on-scroll">
+                <div class="testimonial-card reveal-on-scroll" data-product="midnight-jasmine">
+                    <span class="product-badge">Midnight Jasmine</span>
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">
                         "Ini pembelian kedua saya. Kualitas ketahanannya luar biasa, nempel di baju bahkan sampai
@@ -170,8 +194,50 @@
             document.querySelectorAll('.reveal-on-scroll').forEach(el => {
                 observer.observe(el);
             });
+
+            // --- Testimonial Filtering Logic ---
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+            function filterTestimonials(filterValue) {
+                testimonialCards.forEach(card => {
+                    const product = card.getAttribute('data-product');
+                    if (filterValue === 'all' || product === filterValue) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                // Update active button state
+                filterBtns.forEach(btn => {
+                    if (btn.getAttribute('data-filter') === filterValue) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterTestimonials(btn.getAttribute('data-filter'));
+                });
+            });
+
+            // Check for URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialFilter = urlParams.get('filter');
+            if (initialFilter) {
+                // Wait a bit for animations if needed, or execute immediately
+                filterTestimonials(initialFilter);
+                
+                // Scroll to selector to show the filter is active
+                document.querySelector('.testimonial-selector').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         });
     </script>
+    <script src="assets/js/cart.js"></script>
 </body>
 
 </html>
