@@ -978,14 +978,14 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
 .product-rating {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  margin: 0.8rem 0; /* Clear vertical spacing */
+  gap: 1rem; /* Slightly tighter gap */
+  margin: 0.8rem 0;
 }
 
 .rating-stars {
   color: var(--color-gold);
   letter-spacing: 2px;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Slightly smaller stars */
 }
 
 .view-reviews-link {
@@ -1081,13 +1081,13 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
 
 .product-badge {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1.1rem;
+  right: 1.1rem;
   background: rgba(220, 179, 96, 0.1);
   color: var(--color-gold);
   font-family: var(--font-display);
-  font-size: 0.6rem;
-  padding: 0.3rem 0.8rem;
+  font-size: 0.55rem;
+  padding: 0.25rem 0.7rem;
   border: 1px solid rgba(220, 179, 96, 0.2);
   border-radius: 100px;
   letter-spacing: 0.05em;
@@ -1133,7 +1133,7 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(220, 179, 96, 0.15);
   border-radius: 12px;
-  padding: 2.5rem 1.5rem;
+  padding: 3.5rem 1.75rem 2.5rem;
   flex: 1;
   min-width: 300px;
   max-width: 400px;
@@ -1151,8 +1151,11 @@ body.js-enabled .reveal-on-scroll:not(.is-visible) {
 
 .testimonial-stars {
   color: var(--color-gold);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 2px;
+  margin-bottom: 0.4rem;
+  display: block;
+  text-align: center;
 }
 
 .testimonial-text {
