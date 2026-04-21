@@ -51,7 +51,7 @@
     </section>
 
     <!-- SUBTITLE BAR -->
-    <section class="about-subtitle-bar">
+    <section class="about-subtitle-bar reveal-on-scroll">
       <h2 class="about-subtitle">"Find the scent that speaks of you."</h2>
     </section>
 
@@ -268,6 +268,20 @@
         }
       });
     }
+
+    // Reveal Animation Observer
+    const observerOptions = { threshold: 0.15 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
 
     // Size Toggle Logic
     const sizeToggleContainers = document.querySelectorAll('.size-toggle-container');

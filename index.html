@@ -46,33 +46,33 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero">
-      <div class="hero-content">
+      <div class="hero-content reveal-on-scroll">
         <img src="assets/images/heroo.png" alt="Vintage Ornate Illustration" class="hero-illustration">
       </div>
     </section>
 
-    <section class="cta-bar">
+    <section class="cta-bar reveal-on-scroll">
       <a href="https://wa.me/6281382885293?text=Halo,%20saya%20tertarik%20untuk%20membeli%20produknya" target="_blank"
         class="cta-link">Need help to choosing a product?</a>
     </section>
 
     <!-- BUNDLES SECTION -->
     <section class="bundles">
-      <h2 class="section-title">BUNDLES</h2>
-      <p class="section-description">
+      <h2 class="section-title reveal-on-scroll">BUNDLES</h2>
+      <p class="section-description reveal-on-scroll">
         SANORE hadir untuk menonjolkan kepribadian Anda melalui aroma. Seperti produk eksklusif lainnya, setiap aroma
         kami dirancang dengan cermat. Dengan menggunakan bahan-bahan premium, kami berkomitmen untuk menghadirkan
         pengalaman wewangian mewah yang tidak hanya memikat tetapi juga menenangkan dan menyegarkan Anda sepanjang hari.
       </p>
 
       <div class="product-showcase">
-        <a href="product.html#blushing-rose" class="product-card">
+        <a href="product.html#blushing-rose" class="product-card reveal-on-scroll" style="transition-delay: 0.1s;">
           <div class="product-image-wrapper">
             <img src="assets/images/Blushing Rose 30ml.jpeg" alt="Blushing Rose Scent" class="product-img">
           </div>
           <p class="product-label">Blushing Rose</p>
         </a>
-        <a href="product.html#midnight-jasmine" class="product-card">
+        <a href="product.html#midnight-jasmine" class="product-card reveal-on-scroll" style="transition-delay: 0.3s;">
           <div class="product-image-wrapper">
             <img src="assets/images/Jasmin 30ml.jpeg" alt="Midnight Jasmine Scent" class="product-img">
           </div>
@@ -137,6 +137,36 @@
           navLinks.classList.remove('active');
           navToggle.classList.remove('active');
         }
+      });
+    }
+
+    // Scroll Reveal Logic
+    const observerOptions = { threshold: 0.15 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Hero Mouse Parallax
+    const heroIllustration = document.querySelector('.hero-illustration');
+    if (heroIllustration) {
+      document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth - 0.5;
+        const mouseY = e.clientY / window.innerHeight - 0.5;
+        
+        heroIllustration.style.transform = `
+          translateX(${mouseX * 20}px) 
+          translateY(${mouseY * 20}px)
+          rotateX(${mouseY * -5}deg)
+          rotateY(${mouseX * 5}deg)
+        `;
       });
     }
   </script>
