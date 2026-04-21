@@ -216,12 +216,14 @@ class ShoppingCart {
     document.getElementById('cart-sidebar').classList.add('active');
     document.getElementById('cart-overlay').classList.add('active');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('cart-open');
   }
 
   closeCart() {
     document.getElementById('cart-sidebar').classList.remove('active');
     document.getElementById('cart-overlay').classList.remove('active');
     document.body.style.overflow = '';
+    document.body.classList.remove('cart-open');
   }
 
   render() {

@@ -276,6 +276,13 @@
   transition: var(--transition-smooth, all 0.4s cubic-bezier(0.25, 1, 0.5, 1));
 }
 
+body.cart-open .nav-cart-btn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.8) translateY(20px);
+}
+
 .nav-cart-btn:hover {
   color: #f0ebce;
   transform: scale(1.1);
