@@ -31,7 +31,7 @@ class ShoppingCart {
     this.render();
   }
 
-  addToCart(product) {
+  addToCart(product, btn) {
     // product: { id, name, variant, price, img }
     const existingItem = this.cart.find(item => item.id === product.id && item.variant === product.variant);
 
@@ -45,8 +45,48 @@ class ShoppingCart {
     }
 
     this.saveCart();
-    this.openCart();
+    
+    // Animation instead of opening
+    if (btn) {
+      this.animateToCart(btn, product.img);
+    }
+    
     this.showAddSuccess(product.id, product.variant);
+  }
+
+  animateToCart(btn, imgUrl) {
+    const cartBtn = document.querySelector('.nav-cart-btn');
+    if (!cartBtn || !imgUrl) return;
+
+    // Create flying image
+    const flyer = document.createElement('img');
+    flyer.src = imgUrl;
+    flyer.className = 'flying-item';
+    
+    // Get positions
+    const btnRect = btn.getBoundingClientRect();
+    const cartRect = cartBtn.getBoundingClientRect();
+
+    // Start position
+    flyer.style.left = `${btnRect.left + btnRect.width/2 - 30}px`;
+    flyer.style.top = `${btnRect.top + btnRect.height/2 - 30}px`;
+    
+    document.body.appendChild(flyer);
+
+    // Trigger animation
+    setTimeout(() => {
+      flyer.style.left = `${cartRect.left + cartRect.width/2 - 30}px`;
+      flyer.style.top = `${cartRect.top + cartRect.height/2 - 30}px`;
+      flyer.style.transform = 'scale(0.2)';
+      flyer.style.opacity = '0.7';
+    }, 10);
+
+    // Cleanup and Pulse
+    setTimeout(() => {
+      flyer.remove();
+      cartBtn.classList.add('pulse');
+      setTimeout(() => cartBtn.classList.remove('pulse'), 600);
+    }, 810);
   }
 
   updateQuantity(id, variant, delta) {
@@ -161,7 +201,7 @@ class ShoppingCart {
         }
         
         if (productData.name && productData.price) {
-            this.addToCart(productData);
+            this.addToCart(productData, addBtn);
         }
       }
 

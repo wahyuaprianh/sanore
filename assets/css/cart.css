@@ -261,7 +261,9 @@
 
 /* Navbar Cart Toggle Styling */
 .nav-cart-btn {
-  position: relative;
+  position: fixed;
+  top: 16px;
+  right: 4rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -269,8 +271,55 @@
   color: #dcb360; /* Gold color for navbar icon */
   display: flex;
   align-items: center;
-  margin-left: 15px;
+  z-index: 1001; /* Above navbar */
   transition: var(--transition-smooth, all 0.3s ease);
+}
+
+@media (max-width: 1024px) {
+  .nav-cart-btn {
+    right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-cart-btn {
+    position: fixed !important;
+    top: auto !important; /* Reset top */
+    bottom: 25px !important;
+    right: 25px !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: #dcb360 !important; /* Premium Gold FAB */
+    color: #1a0506 !important; /* Dark icon on gold */
+    border-radius: 50% !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1500 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transform: scale(1);
+    animation: fabAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .nav-cart-btn:active {
+    transform: scale(0.9);
+  }
+
+  .cart-count-badge {
+    top: 2px !important;
+    right: 2px !important;
+    background: #1a0506 !important;
+    border: 2px solid #dcb360 !important;
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+@keyframes fabAppear {
+  from { transform: scale(0) rotate(-45deg); opacity: 0; }
+  to { transform: scale(1) rotate(0); opacity: 1; }
 }
 
 .cart-count-badge {
@@ -364,4 +413,30 @@
 
 .btn-cart:active {
   transform: translateY(0);
+}
+
+/* --- ADD TO CART ANIMATIONS --- */
+.flying-item {
+  position: fixed;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 2px solid #dcb360;
+  box-shadow: 0 0 20px rgba(220, 179, 96, 0.6);
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.nav-cart-btn.pulse {
+  animation: fabPulse 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fabPulse {
+  0% { transform: scale(1); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); }
+  50% { transform: scale(1.3); box-shadow: 0 0 35px #dcb360; }
+  100% { transform: scale(1); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); }
 }

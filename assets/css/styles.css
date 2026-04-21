@@ -78,12 +78,21 @@ body::after {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 4rem;
+  padding-right: 10rem; /* Give room for the fixed cart button */
   position: sticky;
   top: 0;
   z-index: 100;
   background: rgba(20, 4, 6, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(220, 179, 96, 0.1);
+}
+
+@media (min-width: 1025px) {
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .nav-toggle {
