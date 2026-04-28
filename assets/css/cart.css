@@ -135,7 +135,7 @@
 }
 
 .cart-item-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   margin: 0;
@@ -204,7 +204,7 @@
 }
 
 .item-price {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: var(--cart-accent);

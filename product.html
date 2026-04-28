@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="assets/images/lambang.png?v=1">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/cart.css">
+  <link rel="stylesheet" href="assets/css/product-catalog.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
     rel="stylesheet">
@@ -35,7 +36,8 @@
     </button>
   </nav>
   <button class="nav-cart-btn" aria-label="View Cart">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
       <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <path d="M16 10a4 4 0 0 1-8 0"></path>
@@ -44,7 +46,7 @@
   </button>
 
   <main>
-    <!-- PRODUCT HERO (consistent with About Us & Testimonial) -->
+    <!-- PRODUCT HERO -->
     <section class="about-hero">
       <div class="about-hero-overlay"></div>
       <h1 class="about-hero-title">OUR PRODUCT</h1>
@@ -55,161 +57,114 @@
       <h2 class="about-subtitle">"Find the scent that speaks of you."</h2>
     </section>
 
-    <section class="order-now">
-      <div class="products-container">
-        <!-- MIDNIGHT JASMINE -->
-        <div class="product-detail-card" id="midnight-jasmine">
-          <div class="product-visual">
+    <!-- PRODUCT CATALOG GRID -->
+    <section class="catalog-section">
+      <div class="catalog-grid">
+
+        <!-- Card 1: Midnight Jasmine -->
+        <div class="catalog-card" data-product="midnight-jasmine">
+          <div class="catalog-card-img">
             <img src="assets/images/Jasmin 30ml.jpeg" alt="Midnight Jasmine">
+            <div class="catalog-card-overlay">
+              <span class="catalog-view-btn">View Details</span>
+            </div>
           </div>
-          <div class="product-info-box">
-            <div class="product-card-header">
-              <h3 class="product-card-title">MIDNIGHT JASMINE</h3>
-              <span class="product-card-price" id="price-jasmine">Rp 50.000</span>
+          <div class="catalog-card-info">
+            <h3 class="catalog-card-name">Midnight Jasmine</h3>
+            <p class="catalog-card-tagline">Floral · Fresh · Feminin</p>
+            <div class="catalog-card-bottom">
+              <span class="catalog-card-price">Rp 30.000</span>
+              <span class="catalog-card-rating">★★★★★</span>
             </div>
-            <div class="product-rating">
-              <span class="rating-stars">★★★★★</span>
-              <a href="testimonial.html?filter=midnight-jasmine" class="view-reviews-link">SEE REVIEWS</a>
-            </div>
-            <p class="product-description">
-              Midnight Jasmine memiliki aroma yang terasa seperti hangatnya matahari di taman bunga tropis floral manis
-              yang cerah, lembut tapi tetap hidup. Fresh, feminin, dan effortlessly pretty, cocok dipakai sehari-hari.
-            <div class="fragrance-notes">
-              <div class="note-item">
-                <span class="note-label">Top Notes</span>
-                <span class="note-content">Marigold, Floral</span>
-              </div>
-              <div class="note-item">
-                <span class="note-label">Middle Notes</span>
-                <span class="note-content">Jasmine Sambac</span>
-              </div>
-              <div class="note-item">
-                <span class="note-label">Base Notes</span>
-                <span class="note-content">Honey, Amber, Balsamic</span>
-              </div>
-            </div>
-            <div class="product-size">
-              <span class="size-label">Size</span>
-              <div class="size-toggle-container" data-target="price-jasmine">
-                <div class="size-option active" data-price="Rp 50.000">10ml</div>
-                <div class="size-option" data-price="Rp 135.000">30ml</div>
-                <div class="size-slider"></div>
-              </div>
-            </div>
-            <button class="btn-cart" 
-                    data-id="midnight-jasmine" 
-                    data-name="MIDNIGHT JASMINE" 
-                    data-img="assets/images/Jasmin 30ml.jpeg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-              ADD TO CART
-            </button>
           </div>
         </div>
 
-        <!-- CARVANILLA -->
-        <div class="product-detail-card" id="carvanilla">
-          <div class="product-visual">
+        <!-- Card 2: Carvanilla -->
+        <div class="catalog-card" data-product="carvanilla">
+          <div class="catalog-card-img">
             <img src="assets/images/Carvanilla 30ml.jpeg" alt="Carvanilla">
+            <div class="catalog-card-overlay">
+              <span class="catalog-view-btn">View Details</span>
+            </div>
           </div>
-          <div class="product-info-box">
-            <div class="product-card-header">
-              <h3 class="product-card-title">CARVANILLA</h3>
-              <span class="product-card-price" id="price-carvanilla">Rp 50.000</span>
+          <div class="catalog-card-info">
+            <h3 class="catalog-card-name">Carvanilla</h3>
+            <p class="catalog-card-tagline">Sweet · Warm · Cozy</p>
+            <div class="catalog-card-bottom">
+              <span class="catalog-card-price">Rp 30.000</span>
+              <span class="catalog-card-rating">★★★★★</span>
             </div>
-            <div class="product-rating">
-              <span class="rating-stars">★★★★★</span>
-              <a href="testimonial.html?filter=carvanilla" class="view-reviews-link">SEE REVIEWS</a>
-            </div>
-            <p class="product-description">
-              Carvanilla adalah parfum yang membungkusmu dalam lembutnya manis yang elegan. Cocok untuk Anda yang ingin
-              terkesan hangat, manis dan "hug-able". Seperti pelukan lembut di malam hari yang intimate, cozy, dan bikin
-              nagih.
-            </p>
-            <div class="fragrance-notes">
-              <div class="note-item">
-                <span class="note-label">Top Notes</span>
-                <span class="note-content">Caramel</span>
-              </div>
-              <div class="note-item">
-                <span class="note-label">Middle Notes</span>
-                <span class="note-content">Coumarin, Honey</span>
-              </div>
-              <div class="note-item">
-                <span class="note-label">Base Notes</span>
-                <span class="note-content">Vanilla, White Musk</span>
-              </div>
-            </div>
-            <div class="product-size">
-              <span class="size-label">Size</span>
-              <div class="size-toggle-container" data-target="price-carvanilla">
-                <div class="size-option active" data-price="Rp 50.000">10ml</div>
-                <div class="size-option" data-price="Rp 135.000">30ml</div>
-                <div class="size-slider"></div>
-              </div>
-            </div>
-            <button class="btn-cart" 
-                    data-id="carvanilla" 
-                    data-name="CARVANILLA" 
-                    data-img="assets/images/Carvanilla 30ml.jpeg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-              ADD TO CART
-            </button>
           </div>
         </div>
 
-        <!-- BLUSHING ROSE -->
-        <div class="product-detail-card" id="blushing-rose">
-          <div class="product-visual">
-            <img src="assets/images/Blushing Rose 30ml.jpeg" alt="Blushing Rose">
+        <!-- Card 3: Blushing Rose -->
+        <div class="catalog-card" data-product="blushing-rose">
+          <div class="catalog-card-img">
+            <img src="assets/images/Rose30ml.png" alt="Blushing Rose">
+            <div class="catalog-card-overlay">
+              <span class="catalog-view-btn">View Details</span>
+            </div>
           </div>
-          <div class="product-info-box">
-            <div class="product-card-header">
-              <h3 class="product-card-title">BLUSHING ROSE</h3>
-              <span class="product-card-price" id="price-rose">Rp 50.000</span>
+          <div class="catalog-card-info">
+            <h3 class="catalog-card-name">Blushing Rose</h3>
+            <p class="catalog-card-tagline">Elegant · Sensual · Classy</p>
+            <div class="catalog-card-bottom">
+              <span class="catalog-card-price">Rp 30.000</span>
+              <span class="catalog-card-rating">★★★★★</span>
             </div>
-            <div class="product-rating">
-              <span class="rating-stars">★★★★★</span>
-              <a href="testimonial.html?filter=blushing-rose" class="view-reviews-link">SEE REVIEWS</a>
-            </div>
-            <p class="product-description">
-              Blushing Rose memiliki aroma feminin yang mewah dan menggoda perpaduan buah segar dengan mawar yang
-              elegan, dibalut sentuhan hangat yang creamy dan sensual. Cocok untuk Anda yang ingin tampil anggun,
-              classy, dan tetap memiliki aura “expensive dan memorable”.
-            </p>
-            <div class="fragrance-notes">
-              <div class="note-item">
-                <span class="note-label">Top Notes</span>
-                <span class="note-content">Pear, Lychee, Grapefruit</span>
-              </div>
-              <div class="note-item">
-                <span class="note-label">Middle Notes</span>
-                <span class="note-content">Turkish Rose, Incense, Vetiver</span>
-              </div>
-              <div class="note-item">
-                <span class="note-label">Base Notes</span>
-                <span class="note-content">Vanilla, Musk, Evernyl</span>
-              </div>
-            </div>
-            <div class="product-size">
-              <span class="size-label">Size</span>
-              <div class="size-toggle-container" data-target="price-rose">
-                <div class="size-option active" data-price="Rp 50.000">10ml</div>
-                <div class="size-option" data-price="Rp 135.000">30ml</div>
-                <div class="size-slider"></div>
-              </div>
-            </div>
-            <button class="btn-cart" 
-                    data-id="blushing-rose" 
-                    data-name="BLUSHING ROSE" 
-                    data-img="assets/images/Blushing Rose 30ml.jpeg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-              ADD TO CART
-            </button>
           </div>
         </div>
+
       </div>
     </section>
   </main>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div class="product-modal-backdrop" id="productModal">
+    <div class="product-modal">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-body">
+        <div class="modal-visual">
+          <img src="" alt="" id="modalImg">
+        </div>
+        <div class="modal-info">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <span class="modal-price" id="modalPrice">Rp 30.000</span>
+          </div>
+          <div class="modal-rating">
+            <span class="rating-stars">★★★★★</span>
+            <a href="#" class="view-reviews-link" id="modalReviewLink">SEE REVIEWS</a>
+          </div>
+          <p class="modal-description" id="modalDesc"></p>
+          <div class="modal-notes" id="modalNotes"></div>
+          <div class="modal-size">
+            <span class="size-label">Size</span>
+            <div class="size-toggle-container" id="modalSizeToggle">
+              <div class="size-option active" data-price="Rp 30.000" data-size="10ml">10ml</div>
+              <div class="size-option" data-price="Rp 70.000" data-size="30ml">30ml</div>
+              <div class="size-slider"></div>
+            </div>
+          </div>
+          <button class="btn-cart" id="modalCartBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            ADD TO CART
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="social-links">
@@ -249,18 +204,15 @@
   </footer>
 
   <script>
-    // Header Logic
+    // ---- NAV LOGIC ----
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
-
     if (navToggle && navLinks) {
       navToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         navLinks.classList.toggle('active');
         navToggle.classList.toggle('active');
       });
-
-      // Close menu when clicking outside
       document.addEventListener('click', (e) => {
         if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
           navLinks.classList.remove('active');
@@ -269,50 +221,176 @@
       });
     }
 
-    // Reveal Animation Observer
-    const observerOptions = { threshold: 0.15 };
+    // ---- REVEAL ANIMATION ----
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    // ---- PRODUCT DATA ----
+    const productData = {
+      'midnight-jasmine': {
+        name: 'MIDNIGHT JASMINE',
+        img10ml: 'assets/images/Jasmin 10ml.jpg.jpeg',
+        img30ml: 'assets/images/Jasmin 30ml.jpeg',
+        hasImageSwitch: true,
+        reviewLink: 'testimonial.html?filter=midnight-jasmine',
+        description: 'Midnight Jasmine memiliki aroma yang terasa seperti hangatnya matahari di taman bunga tropis floral manis yang cerah, lembut tapi tetap hidup. Fresh, feminin, dan effortlessly pretty, cocok dipakai sehari-hari.',
+        notes: [
+          { label: 'Top Notes', content: 'Marigold, Floral' },
+          { label: 'Middle Notes', content: 'Jasmine Sambac' },
+          { label: 'Base Notes', content: 'Honey, Amber, Balsamic' }
+        ]
+      },
+      'carvanilla': {
+        name: 'CARVANILLA',
+        img10ml: 'assets/images/Carvanilla 30ml.jpeg',
+        img30ml: 'assets/images/Carvanilla 30ml.jpeg',
+        hasImageSwitch: false,
+        reviewLink: 'testimonial.html?filter=carvanilla',
+        description: 'Carvanilla adalah parfum yang membungkusmu dalam lembutnya manis yang elegan. Cocok untuk Anda yang ingin terkesan hangat, manis dan "hug-able". Seperti pelukan lembut di malam hari yang intimate, cozy, dan bikin nagih.',
+        notes: [
+          { label: 'Top Notes', content: 'Caramel' },
+          { label: 'Middle Notes', content: 'Coumarin, Honey' },
+          { label: 'Base Notes', content: 'Vanilla, White Musk' }
+        ]
+      },
+      'blushing-rose': {
+        name: 'BLUSHING ROSE',
+        img10ml: 'assets/images/Rose 10 ml.png',
+        img30ml: 'assets/images/Rose30ml.png',
+        hasImageSwitch: true,
+        reviewLink: 'testimonial.html?filter=blushing-rose',
+        description: 'Blushing Rose memiliki aroma feminin yang mewah dan menggoda perpaduan buah segar dengan mawar yang elegan, dibalut sentuhan hangat yang creamy dan sensual. Cocok untuk Anda yang ingin tampil anggun, classy, dan tetap memiliki aura \u201Cexpensive dan memorable\u201D.',
+        notes: [
+          { label: 'Top Notes', content: 'Pear, Lychee, Grapefruit' },
+          { label: 'Middle Notes', content: 'Turkish Rose, Incense, Vetiver' },
+          { label: 'Base Notes', content: 'Vanilla, Musk, Evernyl' }
+        ]
+      }
+    };
+
+    // ---- MODAL LOGIC ----
+    const modal = document.getElementById('productModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalNotes = document.getElementById('modalNotes');
+    const modalReviewLink = document.getElementById('modalReviewLink');
+    const modalCartBtn = document.getElementById('modalCartBtn');
+    const modalSizeToggle = document.getElementById('modalSizeToggle');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    let currentProduct = null;
+
+    function openModal(productId) {
+      const data = productData[productId];
+      if (!data) return;
+      currentProduct = productId;
+
+      // Populate modal
+      modalTitle.textContent = data.name;
+      modalImg.src = data.img10ml;
+      modalImg.alt = data.name;
+      modalPrice.textContent = 'Rp 30.000';
+      modalDesc.textContent = data.description;
+      modalReviewLink.href = data.reviewLink;
+
+      // Build notes
+      modalNotes.innerHTML = data.notes.map(n =>
+        `<div class="note-item"><span class="note-label">${n.label}</span><span class="note-content">${n.content}</span></div>`
+      ).join('');
+
+      // Cart button data — must include all attributes cart.js reads
+      modalCartBtn.setAttribute('data-id', productId);
+      modalCartBtn.setAttribute('data-name', data.name);
+      modalCartBtn.setAttribute('data-img', data.img10ml);
+      modalCartBtn.setAttribute('data-price', 'Rp 30.000');
+      modalCartBtn.setAttribute('data-variant', '10ml');
+
+      // Reset size toggle to 10ml
+      const options = modalSizeToggle.querySelectorAll('.size-option');
+      const slider = modalSizeToggle.querySelector('.size-slider');
+      options[0].classList.add('active');
+      options[1].classList.remove('active');
+      slider.style.transform = 'translateX(0%)';
+
+      // Show modal
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      currentProduct = null;
+    }
+
+    // Catalog card click
+    document.querySelectorAll('.catalog-card').forEach(card => {
+      card.addEventListener('click', () => openModal(card.dataset.product));
+    });
+
+    // Close modal
+    modalCloseBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+
+    // Size toggle inside modal
+    const sizeOptions = modalSizeToggle.querySelectorAll('.size-option');
+    const sizeSlider = modalSizeToggle.querySelector('.size-slider');
+
+    sizeOptions.forEach((option, index) => {
+      option.addEventListener('click', () => {
+        sizeOptions.forEach(o => o.classList.remove('active'));
+        option.classList.add('active');
+        sizeSlider.style.transform = `translateX(${index * 100}%)`;
+
+        // Update price & cart button attributes
+        const newPrice = option.getAttribute('data-price');
+        const newVariant = option.getAttribute('data-size');
+        modalCartBtn.setAttribute('data-price', newPrice);
+        modalCartBtn.setAttribute('data-variant', newVariant);
+
+        modalPrice.style.opacity = 0;
+        setTimeout(() => {
+          modalPrice.textContent = newPrice;
+          modalPrice.style.opacity = 1;
+        }, 200);
+
+        // Switch image for Jasmine
+        const data = productData[currentProduct];
+        if (data && data.hasImageSwitch) {
+          const selectedSize = option.getAttribute('data-size');
+          const newSrc = selectedSize === '30ml' ? data.img30ml : data.img10ml;
+          modalImg.style.opacity = 0;
+          modalImg.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            modalImg.src = newSrc;
+            modalCartBtn.setAttribute('data-img', newSrc);
+            modalImg.style.opacity = 1;
+            modalImg.style.transform = 'scale(1)';
+          }, 300);
         }
       });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-      observer.observe(el);
     });
 
-    // Size Toggle Logic
-    const sizeToggleContainers = document.querySelectorAll('.size-toggle-container');
-
-    sizeToggleContainers.forEach(container => {
-      const options = container.querySelectorAll('.size-option');
-      const slider = container.querySelector('.size-slider');
-      const targetId = container.getAttribute('data-target');
-      const priceElement = document.getElementById(targetId);
-
-      options.forEach((option, index) => {
-        option.addEventListener('click', () => {
-          // Remove active class from all
-          options.forEach(opt => opt.classList.remove('active'));
-          // Add active class to clicked
-          option.classList.add('active');
-
-          // Move slider
-          slider.style.transform = `translateX(${index * 100}%)`;
-
-          // Update price
-          if (priceElement) {
-            priceElement.style.opacity = 0; // fade out effect
-            setTimeout(() => {
-              priceElement.textContent = option.getAttribute('data-price');
-              priceElement.style.opacity = 1; // fade in
-            }, 200);
-          }
-        });
-      });
-    });
+    // ---- AUTO-OPEN FROM URL HASH ----
+    // When navigating from index.html (e.g. product.html#blushing-rose)
+    function checkHashAndOpen() {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && productData[hash]) {
+        // Small delay to let the page render first
+        setTimeout(() => openModal(hash), 400);
+      }
+    }
+    checkHashAndOpen();
+    window.addEventListener('hashchange', checkHashAndOpen);
   </script>
   <script src="assets/js/cart.js"></script>
 </body>
