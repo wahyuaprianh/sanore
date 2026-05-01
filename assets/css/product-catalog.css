@@ -21,7 +21,7 @@
   background: rgba(92, 24, 26, 0.35);
   border: 1px solid rgba(220, 179, 96, 0.15);
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   position: relative;
@@ -42,6 +42,7 @@
   aspect-ratio: 3/4;
   overflow: hidden;
   background: rgba(40, 10, 12, 0.5);
+  border-radius: 16px 16px 0 0;
 }
 
 .catalog-card-img img {
@@ -167,6 +168,101 @@
 
 .catalog-cart-btn svg {
   pointer-events: none;
+}
+
+/* ---- SIZE PICKER POPOVER ---- */
+.size-picker {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: 0;
+  background: rgba(26, 5, 6, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(220, 179, 96, 0.3);
+  border-radius: 14px;
+  padding: 0.6rem;
+  min-width: 155px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(220, 179, 96, 0.08);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(8px) scale(0.95);
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.size-picker.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+/* Arrow */
+.size-picker::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 14px;
+  width: 12px;
+  height: 12px;
+  background: rgba(26, 5, 6, 0.95);
+  border-right: 1px solid rgba(220, 179, 96, 0.3);
+  border-bottom: 1px solid rgba(220, 179, 96, 0.3);
+  transform: rotate(45deg);
+}
+
+.size-picker-title {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(220, 179, 96, 0.6);
+  padding: 0.15rem 0.5rem 0.3rem;
+  text-align: center;
+}
+
+.size-picker-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(220, 179, 96, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  gap: 1rem;
+  color: var(--color-text-light);
+}
+
+.size-picker-option:hover {
+  background: rgba(220, 179, 96, 0.15);
+  border-color: rgba(220, 179, 96, 0.4);
+  transform: translateX(2px);
+}
+
+.size-picker-option:active {
+  transform: scale(0.97);
+}
+
+.size-picker-size {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: #f0ebce;
+  font-weight: 500;
+}
+
+.size-picker-price {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 /* ---- PRODUCT DETAIL MODAL ---- */

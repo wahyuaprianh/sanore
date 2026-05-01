@@ -358,28 +358,102 @@
       currentProduct = null;
     }
 
-    // Catalog card click (skip if cart button was clicked)
+    // Catalog card click (skip if cart button or size picker was clicked)
     document.querySelectorAll('.catalog-card').forEach(card => {
       card.addEventListener('click', (e) => {
-        if (e.target.closest('.catalog-cart-btn')) return;
+        if (e.target.closest('.catalog-cart-btn') || e.target.closest('.size-picker')) return;
         openModal(card.dataset.product);
       });
     });
 
-    // Quick-add cart buttons on catalog cards
+    // ---- SIZE PICKER POPOVER ----
+    let activePicker = null;
+
+    function closePicker() {
+      if (activePicker) {
+        activePicker.classList.remove('active');
+        setTimeout(() => {
+          if (activePicker && !activePicker.classList.contains('active')) {
+            activePicker.remove();
+            activePicker = null;
+          }
+        }, 250);
+      }
+    }
+
+    function createSizePicker(btn) {
+      // Close any existing picker
+      closePicker();
+
+      const productId = btn.dataset.id;
+      const data = productData[productId];
+      if (!data) return;
+
+      const picker = document.createElement('div');
+      picker.className = 'size-picker';
+      picker.innerHTML = `
+        <div class="size-picker-title">Pilih Ukuran</div>
+        <button class="size-picker-option" data-size="10ml" data-price="Rp 30.000" data-img="${data.img10ml}">
+          <span class="size-picker-size">10ml</span>
+          <span class="size-picker-price">Rp 30.000</span>
+        </button>
+        <button class="size-picker-option" data-size="30ml" data-price="Rp 70.000" data-img="${data.img30ml}">
+          <span class="size-picker-size">30ml</span>
+          <span class="size-picker-price">Rp 70.000</span>
+        </button>
+      `;
+
+      // Position relative to the button's parent card-bottom
+      const cardBottom = btn.closest('.catalog-card-bottom');
+      cardBottom.style.position = 'relative';
+      cardBottom.appendChild(picker);
+
+      // Trigger animation
+      requestAnimationFrame(() => picker.classList.add('active'));
+
+      activePicker = picker;
+
+      // Handle size option clicks
+      picker.querySelectorAll('.size-picker-option').forEach(opt => {
+        opt.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (typeof cartSystem !== 'undefined') {
+            cartSystem.addToCart({
+              id: productId,
+              name: data.name,
+              variant: opt.dataset.size,
+              price: opt.dataset.price,
+              img: opt.dataset.img
+            }, btn);
+          }
+          closePicker();
+        });
+      });
+    }
+
+    // Cart button click → show size picker
     document.querySelectorAll('.catalog-cart-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (typeof cartSystem !== 'undefined') {
-          cartSystem.addToCart({
-            id: btn.dataset.id,
-            name: btn.dataset.name,
-            variant: btn.dataset.variant,
-            price: btn.dataset.price,
-            img: btn.dataset.img
-          }, btn);
+        // Toggle: if picker is already open for this button, close it
+        if (activePicker && btn.closest('.catalog-card-bottom').contains(activePicker)) {
+          closePicker();
+        } else {
+          createSizePicker(btn);
         }
       });
+    });
+
+    // Close picker when clicking outside
+    document.addEventListener('click', (e) => {
+      if (activePicker && !e.target.closest('.size-picker') && !e.target.closest('.catalog-cart-btn')) {
+        closePicker();
+      }
+    });
+
+    // Close picker on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && activePicker) closePicker();
     });
 
     // Close modal
