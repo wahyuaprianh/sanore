@@ -135,6 +135,40 @@
   letter-spacing: 2px;
 }
 
+/* Quick-add cart button on catalog card */
+.catalog-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(220, 179, 96, 0.3);
+  background: rgba(220, 179, 96, 0.1);
+  color: var(--color-gold);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.catalog-cart-btn:hover {
+  background: var(--color-gold);
+  color: #1a0506;
+  border-color: var(--color-gold);
+  transform: scale(1.12);
+  box-shadow: 0 4px 18px rgba(220, 179, 96, 0.35);
+}
+
+.catalog-cart-btn:active {
+  transform: scale(0.95);
+}
+
+.catalog-cart-btn svg {
+  pointer-events: none;
+}
+
 /* ---- PRODUCT DETAIL MODAL ---- */
 .product-modal-backdrop {
   position: fixed;
@@ -366,6 +400,16 @@
 
   .catalog-card-rating {
     font-size: 0.7rem;
+  }
+
+  .catalog-cart-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .catalog-cart-btn svg {
+    width: 15px;
+    height: 15px;
   }
 
   /* Modal mobile */

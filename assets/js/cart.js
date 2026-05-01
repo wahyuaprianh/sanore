@@ -279,16 +279,28 @@ class ShoppingCart {
   }
 
   showAddSuccess(id, variant) {
-    // Optional: add visual feedback to the clicked button
+    // Visual feedback for the clicked button
     const btns = document.querySelectorAll(`[data-id="${id}"][data-variant="${variant}"]`);
     btns.forEach(btn => {
-      const originalText = btn.innerText;
       btn.classList.add('btn-added');
-      btn.innerText = 'Added!';
-      setTimeout(() => {
-        btn.classList.remove('btn-added');
-        btn.innerText = originalText;
-      }, 2000);
+
+      // For icon-only buttons (catalog card), swap to checkmark SVG
+      if (btn.classList.contains('catalog-cart-btn')) {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        setTimeout(() => {
+          btn.classList.remove('btn-added');
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      } else {
+        // For text buttons (modal ADD TO CART)
+        const originalText = btn.innerText;
+        btn.innerText = 'Added!';
+        setTimeout(() => {
+          btn.classList.remove('btn-added');
+          btn.innerText = originalText;
+        }, 2000);
+      }
     });
   }
 

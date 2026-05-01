@@ -367,15 +367,15 @@ body.cart-open .nav-cart-btn {
 /* Add to Cart Button Animations */
 @keyframes successPulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.05); background: #27ae60; }
+  50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
 
 .btn-added {
   animation: successPulse 0.4s ease;
-  background: #27ae60 !important;
-  border-color: #27ae60 !important;
-  color: white !important;
+  background: var(--cart-accent, #dcb360) !important;
+  border-color: var(--cart-accent, #dcb360) !important;
+  color: #1a0506 !important;
 }
 
 /* Add to Cart Button Premium Style */
